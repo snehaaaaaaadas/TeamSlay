@@ -1,0 +1,21 @@
+.ticker {
+  background: var(--black);
+  border-bottom: var(--border);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 2rem;
+  animation: marquee 18s linear infinite;
+}
+.ticker-item {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--lime);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

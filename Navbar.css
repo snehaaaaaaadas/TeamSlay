@@ -1,0 +1,107 @@
+.navbar {
+  background: var(--white);
+  border-bottom: var(--border-thick);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.brand-box {
+  width: 38px; height: 38px;
+  background: var(--black);
+  color: var(--lime);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+  border: var(--border);
+}
+.brand-name {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  color: var(--black);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  border-left: 2px solid transparent;
+  transition: background 0.15s;
+}
+.nav-link:hover { background: var(--lime); }
+.nav-link.active { background: var(--black); color: var(--lime); }
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  padding: 0 1.4rem;
+  background: var(--pink);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-left: var(--border-thick);
+  transition: background 0.15s;
+}
+.nav-cta:hover { background: var(--black); color: var(--lime); }
+.nav-cta.active { background: var(--black); color: var(--lime); }
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 620px) {
+  .burger { display: flex; align-items: center; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    background: var(--white);
+    border-bottom: var(--border-thick);
+    z-index: 200;
+  }
+  .nav-links.open { display: flex; }
+  .nav-link, .nav-cta {
+    border-left: none;
+    border-top: 2px solid var(--black);
+    padding: 1rem 1.5rem;
+    justify-content: flex-start;
+  }
+}
